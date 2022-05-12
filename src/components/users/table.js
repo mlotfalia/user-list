@@ -1,15 +1,11 @@
-import { AiFillDelete } from "react-icons/ai";
-import { FaEdit } from "react-icons/fa";
 import React, { useState } from "react";
 
-export default function UserTable() {
-  const [users, setUser] = useState({
-    userName: "",
-    tel: "",
-    email: "",
-    membership: "",
-    date: "",
-  });
+import { AiFillDelete } from "react-icons/ai";
+import { FaEdit } from "react-icons/fa";
+
+export default function Table() {
+  const [showEdit,setShowEditForm] = useState(false)
+  
   return (
     <>
       <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
@@ -42,18 +38,17 @@ export default function UserTable() {
           <tbody>
             <tr className="bg-white border-b  hover:bg-gray-50 dark:hover:bg-gray-600">
               <td className="px-6 py-4 flex justify-evenly">
-                <a
-                  href="#"
-                  className=" mr-4 font-medium text-red-600 hover:underline text-right"
-                >
+                <button className=" mr-4 font-medium text-red-600 hover:underline text-right">
                   <AiFillDelete />
-                </a>
-                <a
-                  href="#"
+                </button>
+                <button
                   className=" font-medium text-blue-600 hover:underline"
+                  onClick={() => setShowEditForm(true)}
                 >
                   <FaEdit />
-                </a>
+                </button>{
+
+                }
               </td>
               <td className="px-6 py-4  text-right"></td>
               <td className="px-6 py-4  text-right"></td>
