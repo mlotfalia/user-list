@@ -3,7 +3,7 @@ import UserPage from "./components/users";
 
 export default function App() {
   return (
-    <div className="App">
+    <div className="container mx-auto mt-5">
       <UserPage />
     </div>
   );
