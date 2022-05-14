@@ -1,6 +1,8 @@
 import { AiFillDelete } from "react-icons/ai";
 import { FaEdit } from "react-icons/fa";
+
 export default function Table({ users }) {
+  console.log(users);
   return (
     <>
       <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
