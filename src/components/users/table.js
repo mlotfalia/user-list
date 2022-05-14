@@ -1,5 +1,6 @@
 import { AiFillDelete } from "react-icons/ai";
 import { FaEdit } from "react-icons/fa";
+import UserList from "./userList";
 
 export default function Table({ users }) {
   console.log(users);
@@ -32,29 +33,11 @@ export default function Table({ users }) {
             </tr>
           </thead>
           <tbody>
-            {users.length ? (
-              <tr
-                key={users.email}
-                className="bg-white border-b  hover:bg-gray-50 dark:hover:bg-gray-600"
-              >
-                <td className="px-6 py-4 flex justify-evenly">
-                  <button className=" mr-4 font-medium text-red-600 hover:underline text-right">
-                    <AiFillDelete />
-                  </button>
-                  <a href="#" className="text-indigo-600 hover:text-indigo-900">
-                    <FaEdit />
-                    <span className="sr-only">{users.name}</span>
-                  </a>
-                </td>
-                <td className="px-6 py-4  text-right">{users.name}</td>
-                <td className="px-6 py-4  text-right">{users.tel}</td>
-                <td className="px-6 py-4  text-right">{users.email}</td>
-                <td className="px-6 py-4  text-right">{users.membership}</td>
-                <td className="px-6 py-4  text-right">{users.date}</td>
-              </tr>
-            ) : (
-              " کاربری  در لیست موجود نیست"
-            )}
+            {users.length
+              ? users.map((user, index) => (
+                  <UserList key={index} person={user} />
+                ))
+              : " کاربری  در لیست موجود نیست"}
           </tbody>
         </table>
       </div>
