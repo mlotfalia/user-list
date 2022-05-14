@@ -3,17 +3,17 @@ import TableUser from "./table";
 import { useState } from "react";
 
 export default function UsersPage() {
-  const [user, setUser] = useState([]);
+  const [users, setUsers] = useState([]);
 
-  console.log(user);
+  console.log(users);
   return (
     <>
       <div className="container   m-4">
-        <AddUser addUser={setUser} />
+        <AddUser addUser={setUsers} />
       </div>
 
       <div className="flex justify-center">
-        <TableUser users={user} />
+        <TableUser users={users} />
       </div>
     </>
   );

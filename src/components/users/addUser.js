@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-export default function AddUser({ setUsers }) {
+export default function AddUser({ addUser }) {
   const [showModal, setShowModal] = useState(false);
   const [user, setUser] = useState({
     userName: "",
@@ -12,7 +12,7 @@ export default function AddUser({ setUsers }) {
   const addUserHandler = (e) => {
     e.preventDefault();
 
-    setUsers((prevState) => {
+    addUser((prevState) => {
       return [...prevState, user];
     });
     setShowModal(false);
