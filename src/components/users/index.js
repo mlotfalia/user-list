@@ -8,6 +8,7 @@ export default function UsersPage() {
   console.log(users);
   return (
     <>
+<<<<<<< Updated upstream
       <div className="container   m-4">
         <AddUser addUser={setUsers} />
       </div>
@@ -15,6 +16,10 @@ export default function UsersPage() {
       <div className="flex justify-center">
         <TableUser users={users} />
       </div>
+=======
+      <AddUser addUser={setUsers} />
+      <TableUser users={users} setUsers={setUsers} />
+>>>>>>> Stashed changes
     </>
   );
 }

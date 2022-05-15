@@ -2,8 +2,12 @@ import { AiFillDelete } from "react-icons/ai";
 import { FaEdit } from "react-icons/fa";
 import UserList from "./userList";
 
+<<<<<<< Updated upstream
 export default function Table({ users }) {
   console.log(users);
+=======
+const Table = ({ users, setUsers }) => {
+>>>>>>> Stashed changes
   return (
     <>
       <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
@@ -33,14 +37,26 @@ export default function Table({ users }) {
             </tr>
           </thead>
           <tbody>
+<<<<<<< Updated upstream
             {users.length
               ? users.map((user, index) => (
                   <UserList key={index} person={user} />
                 ))
               : " کاربری  در لیست موجود نیست"}
+=======
+            {users.map((user) => (
+              <TableItem
+                user={user}
+                key={user.id}
+                setUsers={setUsers}
+                users={users}
+              />
+            ))}
+>>>>>>> Stashed changes
           </tbody>
         </table>
       </div>
     </>
   );
-}
+};
+export default Table;
