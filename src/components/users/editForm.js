@@ -1,8 +1,14 @@
 import { useState } from "react";
 
+<<<<<<< Updated upstream
 const EditForm = ({ target, setEdit, setUsers }) => {
   console.log(target);
   const [user, setUser] = useState({
+=======
+function EditUserForm({ target, setEdit, setUser }) {
+  console.log(target);
+  const [user, setUsers] = useState({
+>>>>>>> Stashed changes
     userName: target.userName,
     tel: target.tel,
     email: target.email,
@@ -14,18 +20,32 @@ const EditForm = ({ target, setEdit, setUsers }) => {
   const handleInputs = (event) => {
     let name = event.target.name;
     let value = event.target.value;
+<<<<<<< Updated upstream
     setUser({
+=======
+
+    setUsers({
+>>>>>>> Stashed changes
       ...user,
       [name]: value,
     });
   };
 
+<<<<<<< Updated upstream
   const handleSubmit = () => {
     setUsers((prevState) =>
       prevState.map((person) => (person.id === target.id ? user : person))
     );
     setEdit(false);
   };
+=======
+  function handleSubmit() {
+    setUser((prevState) =>
+      prevState.map((person) => (person.id === target.id ? user : person))
+    );
+    setEdit(false);
+  }
+>>>>>>> Stashed changes
 
   return (
     <tr className="hover:bg-gray-100">
@@ -85,6 +105,12 @@ const EditForm = ({ target, setEdit, setUsers }) => {
       </td>
     </tr>
   );
+<<<<<<< Updated upstream
 };
 
 export default EditForm;
+=======
+}
+
+export default EditUserForm;
+>>>>>>> Stashed changes
